@@ -1,7 +1,15 @@
 import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
+import { useState } from "react"
 
 export default function LanguageSelect() {
+
+  const [optionsDisplay, setOptionsDisplay] = useState(false);
+
+  const handleSelectButtonClick = () => {
+    setOptionsDisplay(!optionsDisplay);
+  }
+
   return (
     <div className="language-select flex flex-col">
       <div className="language-select-button flex flex-row items-center
