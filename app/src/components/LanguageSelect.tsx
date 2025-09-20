@@ -11,12 +11,13 @@ export default function LanguageSelect() {
   }
 
   return (
-    <div className="language-select flex flex-col">
+    <div className={`language-select flex flex-col border-2
+    rounded-lg`}>
       <div
         onClick={handleSelectButtonClick}
         className={`language-select-button flex flex-row items-center
-        justify-between py-2 px-4 w-full ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`} border-2 
-        cursor-pointer ${optionsDisplay ? `border-0` : `border-b-2`}`}>
+        justify-between py-2 px-4 w-full cursor-pointer
+        ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}`}>
         <p className="text-[1.1rem] select-none">
           Select a Language
         </p>
@@ -24,9 +25,8 @@ export default function LanguageSelect() {
       </div>
       <ul
         id="languageSelect"
-        className={`text-[1.1rem] w-full h-60 rounded-b-lg border-2 
-        border-t-0 cursor-pointer scroll overflow-y-auto
-        ${optionsDisplay ? `inline-block` : `hidden`}
+        className={`text-[1.1rem] w-full h-60 rounded-b-lg border-t-0
+        cursor-pointer scroll overflow-y-auto ${optionsDisplay ? `inline-block` : `hidden`}
         `}
       >
         {
