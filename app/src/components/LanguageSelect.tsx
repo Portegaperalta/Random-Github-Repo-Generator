@@ -5,14 +5,14 @@ export default function LanguageSelect() {
     <div className="language-select">
       <ul
         id="languageSelect"
-        className="text-[1.1rem] px-4 py-2 w-full h-60 rounded-sm
+        className="text-[1.1rem] w-full h-60 rounded-sm
         border-2 cursor-pointer scroll overflow-y-auto"
       >
         {
           languages.map((language) => (
             <li
               key={language.title}
-              className="cursor-pointer"
+              className="cursor-pointer py-2 px-4 hover:bg-(--clr-gray)"
             >
               {language.title}
             </li>
