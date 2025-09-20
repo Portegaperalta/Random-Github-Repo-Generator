@@ -1,3 +1,5 @@
+import LanguageSelect from "./LanguageSelect";
+
 export default function RepoGenerator() {
   return (
     <div className="repo-generator">
@@ -9,6 +11,7 @@ export default function RepoGenerator() {
         />
         <h1 className="text-xl font-[500]">GitHub Repository Finder</h1>
       </div>
+      <LanguageSelect />
     </div>
   )
 }
