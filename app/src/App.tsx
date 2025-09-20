@@ -3,7 +3,7 @@ import RepoGenerator from './components/RepoGenerator'
 
 function App() {
   return (
-    <div className="">
+    <div className="place-items-center py-50">
       <RepoGenerator />
     </div>
   )
