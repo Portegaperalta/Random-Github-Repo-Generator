@@ -2,7 +2,7 @@ import LanguageSelect from "./LanguageSelect";
 
 export default function RepoGenerator() {
   return (
-    <div className="repo-generator">
+    <div className="repo-generator flex flex-col space-y-4">
       <div className="repo-generator-title flex items-center gap-2">
         <img
           src="/github-tile.svg"
