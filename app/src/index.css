@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root {
+  --clr-white: #FFFFFF;
+  --clr-black: #000000;
+  --clr-gray: #E9ECEF;
+  --clr-gray-text: #6C757D;
+  --crl-red: #E03131;
+  --clr-red-bg: #FFC9C9;
+  --clr-yellow: #F1E15A;
+}
+
+body {
+  background: var(--clr-white);
+}
