@@ -15,7 +15,7 @@ export default function LanguageSelect() {
       <div
         onClick={handleSelectButtonClick}
         className={`language-select-button flex flex-row items-center
-        justify-between py-2 px-4 w-full rounded-t-lg border-2 
+        justify-between py-2 px-4 w-full ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`} border-2 
         cursor-pointer ${optionsDisplay ? `border-0` : `border-b-2`}`}>
         <p className="text-[1.1rem] select-none">
           Select a Language
