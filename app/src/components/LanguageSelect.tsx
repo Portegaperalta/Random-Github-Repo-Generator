@@ -1,3 +1,5 @@
+import languages from "../data/languages"
+
 export default function LanguageSelect() {
   return (
     <div className="language-select">
