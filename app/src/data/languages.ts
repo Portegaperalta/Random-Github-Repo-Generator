@@ -5,10 +5,6 @@ type Language = {
 
 const languages: Language[] = [
   {
-    "title": "All Languages",
-    "value": ""
-  },
-  {
     "title": "ABAP",
     "value": "ABAP"
   },
