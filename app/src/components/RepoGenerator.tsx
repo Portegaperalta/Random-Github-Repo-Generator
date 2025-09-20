@@ -1,7 +1,7 @@
 export default function RepoGenerator() {
   return (
     <div className="repo-generator">
-      <div className="repo-generator-title flex items-center">
+      <div className="repo-generator-title flex items-center gap-2">
         <img
           src="/github-tile.svg"
           alt="github logo"
