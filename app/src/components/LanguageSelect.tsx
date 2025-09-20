@@ -2,11 +2,17 @@ import languages from "../data/languages"
 
 export default function LanguageSelect() {
   return (
-    <div className="language-select">
+    <div className="language-select flex flex-col">
+      <div className="language-select-button py-2 px-4 w-full 
+      rounded-t-lg border-2 border-b-0 cursor-pointer">
+        <p className="text-[1.1rem]">
+          Select a Language
+        </p>
+      </div>
       <ul
         id="languageSelect"
-        className="text-[1.1rem] w-full h-60 rounded-sm
-        border-2 cursor-pointer scroll overflow-y-auto"
+        className="text-[1.1rem] w-full h-60 rounded-b-lg border-2 
+        border-t-0 cursor-pointer scroll overflow-y-auto"
       >
         {
           languages.map((language) => (
