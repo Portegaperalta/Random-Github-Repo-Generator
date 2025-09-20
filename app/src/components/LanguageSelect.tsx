@@ -1,13 +1,16 @@
+import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
 
 export default function LanguageSelect() {
   return (
     <div className="language-select flex flex-col">
-      <div className="language-select-button py-2 px-4 w-full 
-      rounded-t-lg border-2 border-b-0 cursor-pointer">
+      <div className="language-select-button flex flex-row items-center
+      justify-between py-2 px-4 w-full rounded-t-lg border-2 border-b-0 
+      cursor-pointer">
         <p className="text-[1.1rem]">
           Select a Language
         </p>
+        <ChevronDown />
       </div>
       <ul
         id="languageSelect"
