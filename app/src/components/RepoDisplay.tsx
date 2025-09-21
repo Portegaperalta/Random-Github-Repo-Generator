@@ -4,7 +4,7 @@ export default function RepoDisplay() {
   return (
     <div className="repo-display bg-(--clr-gray) py-6 px-4 rounded-lg">
       <div className="status-text text-center">
-        <p className="text-[1.1rem]">
+        <p className="text-[1.1rem] py-10">
           Please select a language
         </p>
       </div>
