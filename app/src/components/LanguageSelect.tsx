@@ -4,6 +4,7 @@ import { useState } from "react"
 
 export default function LanguageSelect() {
 
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('')
   const [ButtonContent, setButtonContent] = useState<string>('');
   const [optionsDisplay, setOptionsDisplay] = useState(false);
 
@@ -12,6 +13,7 @@ export default function LanguageSelect() {
   }
 
   const handleLanguageSelect = (e: React.MouseEvent<HTMLLIElement>) => {
+    setSelectedLanguage(e.currentTarget.innerText);
     setButtonContent(e.currentTarget.innerText);
     setOptionsDisplay(!optionsDisplay);
   }
