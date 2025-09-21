@@ -20,7 +20,8 @@ export default function LanguageSelect() {
 
   return (
     <div className={`language-select relative flex flex-col border-2 
-    ${optionsDisplay ? `border-b-0` : `border-b-2`} rounded-lg`}>
+    ${optionsDisplay ? `border-b-0` : `border-b-2`} 
+    ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}`}>
       <div
         onClick={handleInputClick}
         className={`language-select-input flex flex-row items-center
