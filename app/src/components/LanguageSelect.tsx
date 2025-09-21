@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function LanguageSelect() {
 
@@ -17,6 +17,10 @@ export default function LanguageSelect() {
     setButtonContent(e.currentTarget.innerText);
     setOptionsDisplay(!optionsDisplay);
   }
+
+  useEffect(() => {
+    sessionStorage.setItem('selectedLang', JSON.stringify(selectedLanguage));
+  }, [selectedLanguage])
 
   return (
     <div className={`language-select relative`}>
