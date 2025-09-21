@@ -7,20 +7,21 @@ export default function LanguageSelect() {
   const [ButtonContent, setButtonContent] = useState<string>('');
   const [optionsDisplay, setOptionsDisplay] = useState(false);
 
-  const handleSelectButtonClick = () => {
+  const handleInputClick = () => {
     setOptionsDisplay(!optionsDisplay);
   }
 
   const handleLanguageSelect = (e: React.MouseEvent<HTMLLIElement>) => {
     setButtonContent(e.currentTarget.innerText);
+    setOptionsDisplay(!optionsDisplay);
   }
 
   return (
-    <div className={`flex flex-col border-2
+    <div className={`language-select flex flex-col border-2
     rounded-lg`}>
       <div
-        onClick={handleSelectButtonClick}
-        className={`language-select flex flex-row items-center
+        onClick={handleInputClick}
+        className={`language-select-input flex flex-row items-center
         justify-between py-2 px-4 w-full cursor-pointer
         ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}`}>
         <p className="text-[1.1rem] select-none">
