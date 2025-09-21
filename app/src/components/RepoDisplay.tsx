@@ -1,14 +1,14 @@
-import { Star, GitFork, CircleAlert, Dot } from "lucide-react"
+import { Star, GitFork, CircleAlert } from "lucide-react"
 
 export default function RepoDisplay() {
   return (
-    <div className="repo-display bg-(--clr-gray) py-4 px-4 rounded-lg">
-      <div className="default-text text-center">
-        <p className="text-[1.1rem] hidden">
+    <div className="repo-display bg-(--clr-gray) py-6 px-4 rounded-lg">
+      <div className="status-text text-center">
+        <p className="text-[1.1rem]">
           Please select a language
         </p>
       </div>
-      <div className="repo-content space-y-4">
+      <div className="repo-content space-y-6 hidden">
         <div className="repo-title">
           <h2 className="text-[1.2rem]">
             driver.js
@@ -22,7 +22,6 @@ export default function RepoDisplay() {
         </div>
         <div className="repo-info flex justify-between">
           <div className="repo-language flex">
-            <Dot />
             <p>
               JavaScript
             </p>
