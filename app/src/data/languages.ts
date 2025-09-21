@@ -725,10 +725,6 @@ const languages: Language[] = [
     "value": "NetLinx"
   },
   {
-    "title": "NetLinx",
-    "value": "NetLinx"
-  },
-  {
     "title": "NetLogo",
     "value": "NetLogo"
   },
