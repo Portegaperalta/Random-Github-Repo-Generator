@@ -11,7 +11,9 @@ export default function RepoGenerator() {
           alt="github logo"
           className="w-full max-w-10"
         />
-        <h1 className="text-xl font-[500]">GitHub Repository Finder</h1>
+        <h1 className="text-xl font-[500] select-none">
+          GitHub Repository Finder
+        </h1>
       </div>
       <LanguageSelect />
       <RepoDisplay />
