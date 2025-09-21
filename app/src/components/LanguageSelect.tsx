@@ -19,14 +19,14 @@ export default function LanguageSelect() {
   }
 
   return (
-    <div className={`language-select relative flex flex-col border-2 
-    ${optionsDisplay ? `border-b-0` : `border-b-2`} 
-    ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}`}>
+    <div className={`language-select relative`}>
       <div
         onClick={handleInputClick}
         className={`language-select-input flex flex-row items-center
-        justify-between py-2 px-4 w-full cursor-pointer
-        ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}`}>
+        justify-between py-2 px-4 w-full cursor-pointer border-2 
+        ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}
+        ${optionsDisplay ? `border-b-0` : `border-b-2`}
+        `}>
         <p className="text-[1.1rem] select-none">
           {ButtonContent != '' ? ButtonContent : `Select a Language`}
         </p>
@@ -35,8 +35,8 @@ export default function LanguageSelect() {
       <ul
         id="languageList"
         className={`text-[1.1rem] w-full h-60 rounded-b-lg 
-        bg-(--clr-white) border-t-0 border-2
-        cursor-pointer scroll overflow-y-auto absolute top-10 z-100
+        bg-(--clr-white) border-t-0 absolute border-2 
+        cursor-pointer scroll overflow-y-auto top-full z-50 
         ${optionsDisplay ? `inline-block` : `hidden`}
         `}
       >
