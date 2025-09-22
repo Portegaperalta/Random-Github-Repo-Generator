@@ -1,6 +1,15 @@
 import { Star, GitFork, CircleAlert } from "lucide-react"
 
-export default function RepoDisplay() {
+type RepoDisplayProps = {
+  fullName: string,
+  description: string,
+  language: string,
+  totalStars: number,
+  totalForks: number,
+  totalIssues: number,
+}
+
+export default function RepoDisplay({ fullName, description, language, totalStars, totalForks, totalIssues }: RepoDisplayProps) {
   return (
     <div className="repo-display bg-(--clr-gray) py-6 px-4 rounded-lg">
       <div className="status-text text-center">
@@ -11,19 +20,18 @@ export default function RepoDisplay() {
       <div className="repo-content space-y-6 hidden">
         <div className="repo-title">
           <h2 className="text-[1.2rem]">
-            driver.js
+            {fullName}
           </h2>
         </div>
         <div className="repo-description">
           <p>
-            A light-weight, no-dependency, vanilla JavaScript engine
-            to drive user's focus across the page.
+            {description}
           </p>
         </div>
         <div className="repo-info flex justify-between">
           <div className="repo-language flex">
             <p>
-              JavaScript
+              {language}
             </p>
           </div>
           <div
@@ -31,21 +39,21 @@ export default function RepoDisplay() {
             className="repo-stars text-(--clr-gray-text) 
             flex gap-1 cursor-default">
             <Star size={18} />
-            <p>24,442</p>
+            <p>{totalStars}</p>
           </div>
           <div
             title="Forks"
             className="repo-forks text-(--clr-gray-text) 
             flex gap-1 cursor-default">
             <GitFork size={18} />
-            <p>1,571</p>
+            <p>{totalForks}</p>
           </div>
           <div
             title="Issues"
             className="repo-issues text-(--clr-gray-text) 
             flex gap-1 cursor-default">
             <CircleAlert size={18} />
-            <p>120</p>
+            <p>{totalIssues}</p>
           </div>
         </div>
       </div>

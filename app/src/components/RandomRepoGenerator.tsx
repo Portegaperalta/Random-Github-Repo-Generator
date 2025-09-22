@@ -68,7 +68,8 @@ export default function RandomRepoGenerator() {
           }
         </ul>
       </div>
-      <RepoDisplay />
+      <RepoDisplay
+      />
     </div>
   )
 }
