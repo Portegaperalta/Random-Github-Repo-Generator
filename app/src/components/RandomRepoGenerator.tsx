@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react"
+import getRandomRepoByLanguage from "../api/getRandomRepoByLanguage";
 import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
-import { useEffect, useState } from "react"
 import RepoDisplay from "./RepoDisplay";
 
 export default function RandomRepoGenerator() {
@@ -17,8 +18,15 @@ export default function RandomRepoGenerator() {
   const handleLanguageSelect = (e: React.MouseEvent<HTMLLIElement>) => {
     setSelectedLanguage(e.currentTarget.innerText);
     setButtonContent(e.currentTarget.innerText);
+    // hides language list once a language is selected
     setOptionsDisplay(!optionsDisplay);
   }
+
+  useEffect(() => {
+    if (selectedLanguage != '') {
+      getRandomRepoByLanguage(selectedLanguage);
+    }
+  }, [selectedLanguage])
 
   return (
     <div className="random-repo-generator flex flex-col space-y-4">
