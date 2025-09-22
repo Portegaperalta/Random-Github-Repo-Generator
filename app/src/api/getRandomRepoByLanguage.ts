@@ -8,8 +8,10 @@ export default async function getRandomRepoByLanguage(language: string) {
     const matchingRepositories = response.data.items;
 
     if (matchingRepositories) {
-      console.log(matchingRepositories);
-      return matchingRepositories;
+      const randomIndex = Math.floor(Math.random() * matchingRepositories.length)
+
+      console.log(matchingRepositories[randomIndex]);
+      return matchingRepositories[randomIndex];
     } else {
       console.error("Error fetching data, try again");
     }

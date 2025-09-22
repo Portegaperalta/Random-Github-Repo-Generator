@@ -5,6 +5,10 @@ import RepoDisplay from "./RepoDisplay";
 
 export default function RepoGenerator() {
 
+  useEffect(() => {
+    getRandomRepoByLanguage('Java')
+  }, []);
+
   return (
     <div className="repo-generator flex flex-col space-y-4 w-full
     max-w-88">
