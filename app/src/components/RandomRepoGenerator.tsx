@@ -6,6 +6,7 @@ import RepoDisplay from "./RepoDisplay";
 export default function RandomRepoGenerator() {
 
   const [selectedLanguage, setSelectedLanguage] = useState<string>('')
+  const [selectedLanguageData, setSelectedLanguageData] = useState<any>();
   const [ButtonContent, setButtonContent] = useState<string>('');
   const [optionsDisplay, setOptionsDisplay] = useState(false);
 
@@ -21,7 +22,7 @@ export default function RandomRepoGenerator() {
 
   return (
     <div className="random-repo-generator flex flex-col space-y-4">
-      <div className={`language-select relative`}>
+      <div className="language-select relative">
         <div
           onClick={handleInputClick}
           className={`language-select-input flex flex-row items-center
