@@ -24,7 +24,10 @@ export default function RandomRepoGenerator() {
 
   useEffect(() => {
     if (selectedLanguage != '') {
-      getRandomRepoByLanguage(selectedLanguage);
+      const data = getRandomRepoByLanguage(selectedLanguage);
+      if (data != null) {
+        setSelectedLanguageData(data);
+      }
     }
   }, [selectedLanguage])
 
