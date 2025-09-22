@@ -1,10 +1,10 @@
 import './App.css'
-import RepoGenerator from './components/RepoGenerator'
+import MainContent from './components/MainContent'
 
 function App() {
   return (
     <main className="place-items-center py-50">
-      <RepoGenerator />
+      <MainContent />
     </main>
   )
 }
