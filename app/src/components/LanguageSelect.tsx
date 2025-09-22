@@ -19,7 +19,7 @@ export default function LanguageSelect() {
   }
 
   useEffect(() => {
-    sessionStorage.setItem('selectedLang', JSON.stringify(selectedLanguage));
+    sessionStorage.setItem('selectedLang', selectedLanguage);
   }, [selectedLanguage])
 
   return (
