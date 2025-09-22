@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export default async function getRepoByLanguage(language: string) {
+export default async function getRandomRepoByLanguage(language: string) {
   const baseUrl = `https://api.github.com/search/repositories?q=${language}+language:${language}`;
 
   try {

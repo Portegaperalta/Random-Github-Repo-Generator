@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import getRepoByLanguage from "../api/getRepoByLanguage";
+import getRandomRepoByLanguage from "../api/getRandomRepoByLanguage";
 import LanguageSelect from "./LanguageSelect";
 import RepoDisplay from "./RepoDisplay";
 
 export default function RepoGenerator() {
-
 
   return (
     <div className="repo-generator flex flex-col space-y-4 w-full
