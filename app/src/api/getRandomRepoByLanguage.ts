@@ -9,8 +9,6 @@ export default async function getRandomRepoByLanguage(language: string) {
 
     if (matchingRepositories) {
       const randomIndex = Math.floor(Math.random() * matchingRepositories.length)
-
-      console.log(matchingRepositories[randomIndex]);
       return matchingRepositories[randomIndex];
     } else {
       console.error("Error fetching data, try again");
