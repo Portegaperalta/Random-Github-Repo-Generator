@@ -23,9 +23,15 @@ export default function RandomRepoGenerator() {
   }
 
   const fetchSelectedLanguageData = async (language: string) => {
-    const selectedLanguageData = await getRandomRepoByLanguage(language);
-    console.log(selectedLanguageData);
+    const fetchedLanguageData = await getRandomRepoByLanguage(language);
+    setSelectedLanguageData(fetchedLanguageData);
   }
+
+  useEffect(() => {
+    if (selectedLanguage != '') {
+      fetchSelectedLanguageData(selectedLanguage);
+    }
+  }, [selectedLanguage]);
 
   return (
     <div className="random-repo-generator flex flex-col space-y-4">
