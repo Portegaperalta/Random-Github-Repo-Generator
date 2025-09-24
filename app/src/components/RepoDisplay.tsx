@@ -13,7 +13,7 @@ export default function RepoDisplay(props: RepoDisplayProps) {
             <a
               href={props.repoData.url}
               target="about_blank"
-              className="text-[1.2rem] hover:underlinea">
+              className="text-[1.2rem] hover:underline">
               {props.repoData.full_name}
             </a>
           </div>
