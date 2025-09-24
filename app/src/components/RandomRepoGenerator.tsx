@@ -40,10 +40,10 @@ export default function RandomRepoGenerator() {
         <div
           onClick={handleInputClick}
           className={`language-select-input flex flex-row items-center
-        justify-between py-2 px-4 w-full cursor-pointer border-2 
-        ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}
-        ${optionsDisplay ? `border-b-0` : `border-b-2`}
-        `}>
+          justify-between py-2 px-4 w-full cursor-pointer border-2 
+          ${optionsDisplay ? `rounded-t-lg` : `rounded-lg`}
+          ${optionsDisplay ? `border-b-0` : `border-b-2`}`}
+        >
           <p className="text-[1.1rem] select-none">
             {ButtonContent != '' ? ButtonContent : `Select a Language`}
           </p>
@@ -52,10 +52,9 @@ export default function RandomRepoGenerator() {
         <ul
           id="languageList"
           className={`text-[1.1rem] w-full h-60 rounded-b-lg 
-        bg-(--clr-white) border-t-0 absolute border-2 
-        cursor-pointer scroll overflow-y-auto top-full z-50 
-        ${optionsDisplay ? `inline-block` : `hidden`}
-        `}
+          bg-(--clr-white) border-t-0 absolute border-2 
+          cursor-pointer scroll overflow-y-auto top-full z-50 
+          ${optionsDisplay ? `inline-block` : `hidden`}`}
         >
           {
             languages.map((language) => (
@@ -63,7 +62,7 @@ export default function RandomRepoGenerator() {
                 onClick={handleLanguageSelect}
                 key={language.title}
                 className="cursor-pointer py-2 px-4 select-none
-              hover:bg-(--clr-gray)"
+                hover:bg-(--clr-gray)"
               >
                 {language.title}
               </li>
@@ -71,11 +70,14 @@ export default function RandomRepoGenerator() {
           }
         </ul>
       </div>
-      <RepoDisplay repoData={selectedLanguageData} />
+      <RepoDisplay
+        repoData={selectedLanguageData}
+      />
       <RefreshButton
         onClick={() => { }}
         className={`refresh-button text-white text-center py-2
-     bg-black rounded-lg cursor-pointer ${selectedLanguageData ? `inline-block` : `hidden`}`} />
+     bg-black rounded-lg cursor-pointer ${selectedLanguageData ? `inline-block` : `hidden`}`}
+      />
     </div>
   )
 }
