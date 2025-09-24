@@ -72,7 +72,10 @@ export default function RandomRepoGenerator() {
         </ul>
       </div>
       <RepoDisplay repoData={selectedLanguageData} />
-      <RefreshButton />
+      <RefreshButton
+        onClick={() => { }}
+        className={`refresh-button text-white text-center py-2
+     bg-black rounded-lg cursor-pointer`} />
     </div>
   )
 }
