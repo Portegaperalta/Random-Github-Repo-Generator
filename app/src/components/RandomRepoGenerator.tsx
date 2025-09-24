@@ -9,6 +9,7 @@ export default function RandomRepoGenerator() {
 
   const [selectedLanguage, setSelectedLanguage] = useState<string>('')
   const [selectedLanguageData, setSelectedLanguageData] = useState<any>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [ButtonContent, setButtonContent] = useState<string>('');
   const [optionsDisplay, setOptionsDisplay] = useState(false);
 
@@ -19,13 +20,17 @@ export default function RandomRepoGenerator() {
   const handleLanguageSelect = (e: React.MouseEvent<HTMLLIElement>) => {
     setSelectedLanguage(e.currentTarget.innerText);
     setButtonContent(e.currentTarget.innerText);
+    setIsLoading(true);
     // hides language list once a language is selected
     setOptionsDisplay(!optionsDisplay);
   }
 
   const fetchSelectedLanguageData = async (language: string) => {
     const fetchedLanguageData = await getRandomRepoByLanguage(language);
-    setSelectedLanguageData(fetchedLanguageData);
+    if (fetchedLanguageData != undefined) {
+      setSelectedLanguageData(fetchedLanguageData);
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -71,6 +76,7 @@ export default function RandomRepoGenerator() {
         </ul>
       </div>
       <RepoDisplay
+        isLoading={isLoading}
         repoData={selectedLanguageData}
       />
       <RefreshButton

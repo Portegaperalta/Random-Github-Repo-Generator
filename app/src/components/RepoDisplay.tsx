@@ -2,6 +2,7 @@ import { Star, GitFork, CircleAlert } from "lucide-react"
 
 type RepoDisplayProps = {
   repoData: any;
+  isLoading: boolean,
 }
 
 export default function RepoDisplay(props: RepoDisplayProps) {
@@ -62,7 +63,9 @@ export default function RepoDisplay(props: RepoDisplayProps) {
       <div className="repo-display bg-(--clr-gray) py-6 px-4 rounded-lg">
         <div className="status-text text-center">
           <p className="text-[1.1rem] py-10 select-none">
-            Please select a language
+            {
+              props.isLoading ? `Loading, please wait...` : `Please select a language`
+            }
           </p>
         </div>
       </div>
