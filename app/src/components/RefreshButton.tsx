@@ -3,10 +3,11 @@ type RefreshButtonProps = {
   onClick: () => void,
 }
 
-export default function RefreshButton() {
+export default function RefreshButton({ className, onClick }: RefreshButtonProps) {
   return (
-    <button className="refresh-button text-white text-center py-2
-     bg-black rounded-lg cursor-pointer">
+    <button
+      onClick={onClick}
+      className={className}>
       Refresh
     </button>
   )
