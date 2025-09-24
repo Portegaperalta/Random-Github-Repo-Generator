@@ -70,7 +70,7 @@ export default function RandomRepoGenerator() {
           }
         </ul>
       </div>
-      <RepoDisplay />
+      <RepoDisplay repoData={selectedLanguageData} />
     </div>
   )
 }
