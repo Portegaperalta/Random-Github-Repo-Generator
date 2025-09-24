@@ -34,7 +34,7 @@ export default function RepoDisplay(props: RepoDisplayProps) {
               <div
                 title="Stars"
                 className="repo-stars text-(--clr-gray-text) 
-            flex gap-1 cursor-default">
+                flex gap-1 cursor-default">
                 <Star size={18} />
                 <p>
                   {props.repoData.stargazers_count}
@@ -43,7 +43,7 @@ export default function RepoDisplay(props: RepoDisplayProps) {
               <div
                 title="Forks"
                 className="repo-forks text-(--clr-gray-text) 
-            flex gap-1 cursor-default">
+                flex gap-1 cursor-default">
                 <GitFork size={18} />
                 <p>
                   {props.repoData.forks_count}
@@ -52,7 +52,7 @@ export default function RepoDisplay(props: RepoDisplayProps) {
               <div
                 title="Issues"
                 className="repo-issues text-(--clr-gray-text) 
-            flex gap-1 cursor-default">
+                flex gap-1 cursor-default">
                 <CircleAlert size={18} />
                 <p>
                   {props.repoData.open_issues_count}
@@ -63,7 +63,7 @@ export default function RepoDisplay(props: RepoDisplayProps) {
         </a>
       </div>
     ) : (
-      <div className={`repo-display py-6 px-4 rounded-lg 
+      <div className={`repo-display py-20 px-4 rounded-lg 
       ${props.error ? `bg-(--clr-red-bg)` : `bg-(--clr-gray)`} `}>
         <div className="status-text text-center">
           <p className={`${(props.isLoading || props.error) ? `hidden` : `inline-block`}`}>
