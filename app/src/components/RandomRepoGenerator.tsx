@@ -3,6 +3,7 @@ import getRandomRepoByLanguage from "../api/getRandomRepoByLanguage";
 import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
 import RepoDisplay from "./RepoDisplay";
+import RefreshButton from "./RefreshButton";
 
 export default function RandomRepoGenerator() {
 
@@ -71,6 +72,7 @@ export default function RandomRepoGenerator() {
         </ul>
       </div>
       <RepoDisplay repoData={selectedLanguageData} />
+      <RefreshButton />
     </div>
   )
 }
