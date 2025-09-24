@@ -75,7 +75,7 @@ export default function RandomRepoGenerator() {
       <RefreshButton
         onClick={() => { }}
         className={`refresh-button text-white text-center py-2
-     bg-black rounded-lg cursor-pointer`} />
+     bg-black rounded-lg cursor-pointer ${selectedLanguageData ? `inline-block` : `hidden`}`} />
     </div>
   )
 }
