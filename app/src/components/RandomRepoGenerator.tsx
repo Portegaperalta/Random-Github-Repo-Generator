@@ -10,6 +10,7 @@ export default function RandomRepoGenerator() {
   const [selectedLanguage, setSelectedLanguage] = useState<string>('')
   const [selectedLanguageRepoData, setSelectedLanguageRepoData] = useState<any>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const [ButtonContent, setButtonContent] = useState<string>('');
   const [optionsDisplay, setOptionsDisplay] = useState(false);
 
@@ -29,6 +30,8 @@ export default function RandomRepoGenerator() {
     if (fetchedLanguageRepoData != undefined) {
       setSelectedLanguageRepoData(fetchedLanguageRepoData);
       setIsLoading(false);
+    } else {
+      setError(true);
     }
   }
 
