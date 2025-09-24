@@ -33,6 +33,7 @@ export default function RandomRepoGenerator() {
       setIsLoading(false);
     } else {
       setError(true);
+      setIsLoading(false);
     }
   }
 
@@ -79,8 +80,9 @@ export default function RandomRepoGenerator() {
         </ul>
       </div>
       <RepoDisplay
-        isLoading={isLoading}
         repoData={selectedLanguageRepoData}
+        isLoading={isLoading}
+        error={error}
       />
       <RefreshButton
         onClick={() => fetchSelectedLanguageRepo(selectedLanguage)}

@@ -3,6 +3,7 @@ import { Star, GitFork, CircleAlert } from "lucide-react"
 type RepoDisplayProps = {
   repoData: any;
   isLoading: boolean,
+  error: boolean,
 }
 
 export default function RepoDisplay(props: RepoDisplayProps) {
@@ -60,12 +61,17 @@ export default function RepoDisplay(props: RepoDisplayProps) {
         </div>
       </div>
     ) : (
-      <div className="repo-display bg-(--clr-gray) py-6 px-4 rounded-lg">
+      <div className={`repo-display py-6 px-4 rounded-lg 
+      ${props.error ? `bg-(--clr-red-bg)` : `bg-(--clr-gray)`} `}>
         <div className="status-text text-center">
-          <p className="text-[1.1rem] py-10 select-none">
-            {
-              props.isLoading ? `Loading, please wait...` : `Please select a language`
-            }
+          <p className={`${(props.isLoading || props.error) ? `hidden` : `inline-block`}`}>
+            Please select a language
+          </p>
+          <p className={`${props.isLoading ? `inline-block` : `hidden`}`}>
+            Loading, please wait...
+          </p>
+          <p className={`${props.error ? `inline-block` : `hidden`}`}>
+            Error fetching repositories
           </p>
         </div>
       </div>
