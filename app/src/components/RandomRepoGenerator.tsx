@@ -8,7 +8,7 @@ import RefreshButton from "./RefreshButton";
 export default function RandomRepoGenerator() {
 
   const [selectedLanguage, setSelectedLanguage] = useState<string>('')
-  const [selectedLanguageData, setSelectedLanguageData] = useState<any>();
+  const [selectedLanguageRepoData, setSelectedLanguageRepoData] = useState<any>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [ButtonContent, setButtonContent] = useState<string>('');
   const [optionsDisplay, setOptionsDisplay] = useState(false);
@@ -21,21 +21,20 @@ export default function RandomRepoGenerator() {
     setSelectedLanguage(e.currentTarget.innerText);
     setButtonContent(e.currentTarget.innerText);
     setIsLoading(true);
-    // hides language list once a language is selected
     setOptionsDisplay(!optionsDisplay);
   }
 
-  const fetchSelectedLanguageData = async (language: string) => {
-    const fetchedLanguageData = await getRandomRepoByLanguage(language);
-    if (fetchedLanguageData != undefined) {
-      setSelectedLanguageData(fetchedLanguageData);
+  const fetchSelectedLanguageRepo = async (language: string) => {
+    const fetchedLanguageRepoData = await getRandomRepoByLanguage(language);
+    if (fetchedLanguageRepoData != undefined) {
+      setSelectedLanguageRepoData(fetchedLanguageRepoData);
       setIsLoading(false);
     }
   }
 
   useEffect(() => {
     if (selectedLanguage != '') {
-      fetchSelectedLanguageData(selectedLanguage);
+      fetchSelectedLanguageRepo(selectedLanguage);
     }
   }, [selectedLanguage]);
 
@@ -77,12 +76,12 @@ export default function RandomRepoGenerator() {
       </div>
       <RepoDisplay
         isLoading={isLoading}
-        repoData={selectedLanguageData}
+        repoData={selectedLanguageRepoData}
       />
       <RefreshButton
-        onClick={() => fetchSelectedLanguageData(selectedLanguage)}
+        onClick={() => fetchSelectedLanguageRepo(selectedLanguage)}
         className={`refresh-button text-white text-center py-2
-     bg-black rounded-lg cursor-pointer ${selectedLanguageData ? `inline-block` : `hidden`}`}
+     bg-black rounded-lg cursor-pointer ${selectedLanguageRepoData ? `inline-block` : `hidden`}`}
       />
     </div>
   )
