@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
 import RepoDisplay from "./RepoDisplay";
 import RefreshButton from "./RefreshButton";
+import RetryButton from "./RetryButton";
 
 export default function RandomRepoGenerator() {
 
@@ -85,6 +86,11 @@ export default function RandomRepoGenerator() {
         onClick={() => fetchSelectedLanguageRepo(selectedLanguage)}
         className={`refresh-button text-white text-center py-2
      bg-black rounded-lg cursor-pointer ${selectedLanguageRepoData ? `inline-block` : `hidden`}`}
+      />
+      <RetryButton
+        onClick={() => fetchSelectedLanguageRepo(selectedLanguage)}
+        className={`retry-button text-white text-center py-2 bg-(--clr-red)
+        rounded-lg cursor-pointer ${error ? `inline-block` : `hidden`}`}
       />
     </div>
   )
