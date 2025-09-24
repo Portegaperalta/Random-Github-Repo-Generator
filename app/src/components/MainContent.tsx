@@ -3,7 +3,7 @@ import RandomRepoGenerator from "./RandomRepoGenerator";
 export default function MainContent() {
   return (
     <div className="flex flex-col space-y-6 w-full
-    max-w-88">
+    max-w-90">
       <div className="title flex items-center gap-2">
         <img
           src="/github-tile.svg"
