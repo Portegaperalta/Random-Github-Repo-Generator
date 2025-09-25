@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "motion/react"
 import getRandomRepoByLanguage from "../api/getRandomRepoByLanguage";
 import { ChevronDown } from "lucide-react"
 import languages from "../data/languages"
@@ -58,26 +59,34 @@ export default function RandomRepoGenerator() {
           </p>
           <ChevronDown />
         </div>
-        <ul
-          id="languageList"
-          className={`text-[1.1rem] w-full h-60 rounded-b-lg 
-          bg-(--clr-white) border-t-0 absolute border-2 
-          cursor-pointer scroll overflow-y-auto top-full z-50 
-          ${optionsDisplay ? `inline-block` : `hidden`}`}
-        >
-          {
-            languages.map((language) => (
-              <li
-                onClick={handleLanguageSelect}
-                key={language.title}
-                className="cursor-pointer py-2 px-4 select-none
+        <AnimatePresence>
+          {optionsDisplay && (
+            <motion.ul
+              id="languageList"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "15rem" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className={`text-[1.1rem] w-full rounded-b-lg 
+              bg-(--clr-white) border-t-0 absolute border-2 
+              cursor-pointer scroll overflow-y-auto top-full z-50 
+              ${optionsDisplay ? `inline-block` : `hidden`}`}
+            >
+              {
+                languages.map((language) => (
+                  <li
+                    onClick={handleLanguageSelect}
+                    key={language.title}
+                    className="cursor-pointer py-2 px-4 select-none
                 hover:bg-(--clr-gray)"
-              >
-                {language.title}
-              </li>
-            ))
-          }
-        </ul>
+                  >
+                    {language.title}
+                  </li>
+                ))
+              }
+            </motion.ul>
+          )}
+        </AnimatePresence>
       </div>
       <RepoDisplay
         repoData={selectedLanguageRepoData}
