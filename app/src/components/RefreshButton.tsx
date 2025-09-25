@@ -1,3 +1,5 @@
+import { motion } from 'motion/react'
+
 type RefreshButtonProps = {
   className: string,
   onClick: () => void,
@@ -5,10 +7,11 @@ type RefreshButtonProps = {
 
 export default function RefreshButton({ className, onClick }: RefreshButtonProps) {
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.95 }}
       onClick={onClick}
       className={className}>
       Refresh
-    </button>
+    </motion.button>
   )
 }
