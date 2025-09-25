@@ -11,7 +11,7 @@ export default function MainContent() {
           className="w-full max-w-10"
         />
         <h1 className="text-xl font-[500] select-none">
-          GitHub Repository Finder
+          Github Repository Generator
         </h1>
       </div>
       <RandomRepoGenerator />
